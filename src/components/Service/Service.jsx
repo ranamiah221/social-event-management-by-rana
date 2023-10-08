@@ -1,7 +1,11 @@
+import { Link } from "react-router-dom";
 
 
 const Service = ({service}) => {
     const { id, relevant_name, image, price }= service;
+    const handleSeeDetails=()=>{
+        console.log('Clicked see datails btn');
+    }
     return (
         <div>
             <div className="card card-compact w-full  shadow-xl">
@@ -12,7 +16,7 @@ const Service = ({service}) => {
            <p className="text-xl font-medium text-gray-600">{price} <span> Tk</span></p>
          
           <div className="card-actions justify-end">
-               <button className="btn bg-green-400 hover:bg-green-600 text-white font-bold text-sm">See Details</button>
+          <Link to={`/service/${id}`}><button className="btn bg-green-400 hover:bg-green-600 text-white font-bold text-sm">See Details</button></Link>
            </div>
          </div>
          </div>
