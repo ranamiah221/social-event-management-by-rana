@@ -2,6 +2,8 @@
 import { useEffect, useState } from "react";
 import {  useLoaderData, useNavigate, useParams } from "react-router-dom";
 
+
+
 const ServiceDetails = () => {
     const navigate = useNavigate();
     const handleGoHome=()=>{
@@ -16,8 +18,9 @@ const ServiceDetails = () => {
        const findService = services.find ( service => service.id == id);
        setService(findService);
 
-    },[])
+    },[]);
 
+   
 
     return (
        <div className="w-full lg:flex md:flex rounded shadow-lg mt-10">

@@ -3,9 +3,7 @@ import { Link } from "react-router-dom";
 
 const Service = ({service}) => {
     const { id, relevant_name, image, price }= service;
-    const handleSeeDetails=()=>{
-        console.log('Clicked see datails btn');
-    }
+    
     return (
         <div>
             <div className="card card-compact w-full  shadow-xl">

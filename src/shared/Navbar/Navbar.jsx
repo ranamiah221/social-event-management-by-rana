@@ -8,6 +8,7 @@ import swal from "sweetalert";
 const Navbar = () => {
 
   const { user,  logOut }= useContext(AuthContext);
+  console.log(user);
   const handleSignOut =()=>{
      logOut()
      .then(()=>{
@@ -21,7 +22,8 @@ const Navbar = () => {
         <NavLink className="mr-4 text-[blue] text-sm font-medium hover:bg-slate-300 p-2 rounded-lg" to={'/'}>Home</NavLink>
         <NavLink className="mr-4 text-[blue] text-sm font-medium hover:bg-slate-300 p-2 rounded-lg" to={'/register'}>Register</NavLink>
         <NavLink className="mr-4 text-[blue] text-sm font-medium hover:bg-slate-300 p-2 rounded-lg" to={'/login'}>Login</NavLink>
-
+        <NavLink className="mr-4 text-[blue] text-sm font-medium hover:bg-slate-300 p-2 rounded-lg" to={'/about'}>About</NavLink>
+        <NavLink className="mr-4 text-[blue] text-sm font-medium hover:bg-slate-300 p-2 rounded-lg" to={'/booking'}>Booking</NavLink>
     </nav>
     return (
         
@@ -43,14 +45,14 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-
-          {
+          <div>
+            {
             user? 
             <button onClick={handleSignOut} className="btn">Log Out</button>
             :
             <Link to={'/login'}><button className="btn">Login</button></Link>
           }
-          
+          </div>
         </div>
       </div>
     );

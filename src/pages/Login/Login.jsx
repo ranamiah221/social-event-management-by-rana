@@ -9,7 +9,17 @@ const Login = () => {
     const navigate = useNavigate();
     console.log('location in the login page', location);
 
-    const { signIn }= useContext(AuthContext)
+    const { signIn , signInWithGoogle }= useContext(AuthContext)
+
+    const handleGoogleSignIn=()=>{
+        signInWithGoogle()
+        .then(result=>{
+            console.log(result.user)
+        })
+        .catch(error=>{
+            console.error(error);
+        })
+    }
     
      const handleLogin= e =>{
         e.preventDefault();
@@ -55,6 +65,8 @@ const Login = () => {
                      <button className="btn btn-primary">Login</button>
             </div>
                  <p className="mt-5">Do Not have An Account ? Please <span className="text-blue-500 text-base font-medium"><Link to={'/register'}>Register</Link></span></p>
+            
+                <p><button onClick={handleGoogleSignIn} className=" mt-4 btn btn-ghost text-blue-600 text-base font-medium">Google</button></p>
              </form>
         </div>
         </div>
