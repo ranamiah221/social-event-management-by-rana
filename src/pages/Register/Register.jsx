@@ -11,6 +11,7 @@ const Register = () => {
 
     const { createUser } = useContext(AuthContext);
     const [registerError, setRegisterError]= useState('');
+    
 
     const handleRegister= e =>{
         e.preventDefault();
@@ -43,13 +44,13 @@ const Register = () => {
                   <label className="label">
                     <span className="label-text">Name</span>
                  </label>
-                    <input type="text" name="name" placeholder="name" className="input input-bordered" />
+                    <input type="text" name="name" placeholder="name" className="input input-bordered" required/>
              </div>
              <div className="form-control">
                   <label className="label">
                     <span className="label-text">Photo Url</span>
                  </label>
-                    <input type="text" name="url" placeholder="photo url" className="input input-bordered" />
+                    <input type="text" name="url" placeholder="photo url" className="input input-bordered" required/>
              </div>
              <div className="form-control">
                   <label className="label">

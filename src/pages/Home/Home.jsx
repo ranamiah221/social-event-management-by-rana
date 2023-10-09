@@ -4,6 +4,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from "react";
 import Service from "../../components/Service/Service";
+import Footer from "../../components/Footer/Footer";
 
 
 
@@ -22,6 +23,7 @@ const Home = () => {
                    services.map(service => <Service key={service.id} service={service} > </Service>)
                 }
             </div>
+            <Footer></Footer>
         </div>
     );
 };

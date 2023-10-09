@@ -41,9 +41,10 @@ const Login = () => {
         })
         .catch(error=>{
             console.error(error);
-            swal("Oops!!!","Something went wrong !!! Try Again", "error");
+            swal("Oops!!","Something went wrong !!! Try Again", "error");
             
         })
+        
        
      }
 
