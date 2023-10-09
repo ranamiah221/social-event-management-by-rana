@@ -20,16 +20,18 @@ const ServiceDetails = () => {
 
 
     return (
-       <div className="w-full flex">
-             <div className="w-1/2 ">
-                <img className="h-4/6 w-full" src={service.image} alt="" />
+       <div className="w-full lg:flex md:flex rounded shadow-lg mt-10">
+             <div className=" lg:w-1/2 md:1/2">
+                <img className="h-full lg:h-[450px] w-full rounded-sm" src={service.image} alt="" />
              </div>
-             <div className="w-1/2">
-                 <h1>{service.relevant_name}</h1>
-                 <p>{service.description}</p>
-                 <p className="text-xl font-medium text-gray-600">{service.price} <span> Tk</span></p>
-                 <button onClick={handleGoHome}>Go Home</button>
+            <div className="lg:w-1/2 md:w-1/2 flex items-center">
+            <div className="px-8">
+                 <h1 className="text-3xl font-bold pb-8">{service.relevant_name}</h1>
+                 <p className="text-base font-normal pb-5 text-gray-500 text-justify">{service.description}</p>
+                 <p className="text-xl font-medium pb-5 text-gray-600">Price: {service.price} <span> Tk</span></p>
+                 <button  className="btn hover:bg-green-600 bg-green-400 font-bold text-white text-sm" onClick={handleGoHome}>Go Home</button>
              </div>
+            </div>
        </div>
     );
 };
