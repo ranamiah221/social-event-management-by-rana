@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import swal from "sweetalert";
@@ -10,6 +10,7 @@ import swal from "sweetalert";
 const Register = () => {
 
     const { createUser } = useContext(AuthContext);
+    const [registerError, setRegisterError]= useState('');
 
     const handleRegister= e =>{
         e.preventDefault();
@@ -28,8 +29,9 @@ const Register = () => {
         })
         .catch(error=>{
            console.error(error);
-           swal("Oops!", "You are already registered please login..", "error");
+           setRegisterError(error.message);
         })
+        swal(registerError,"Already Registered", "error");
      }
 
 

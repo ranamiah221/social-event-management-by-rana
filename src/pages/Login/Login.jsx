@@ -7,6 +7,7 @@ import swal from "sweetalert";
 const Login = () => {
     const location = useLocation();
     const navigate = useNavigate();
+    
     console.log('location in the login page', location);
 
     const { signIn , signInWithGoogle }= useContext(AuthContext)
@@ -19,6 +20,7 @@ const Login = () => {
         .catch(error=>{
             console.error(error);
         })
+
     }
     
      const handleLogin= e =>{
@@ -38,10 +40,11 @@ const Login = () => {
 
         })
         .catch(error=>{
-            console.log(error);
-            swal("Oops!","Something went wrong !!! Try Again", "error");
+            console.error(error);
+            swal("Oops!!!","Something went wrong !!! Try Again", "error");
+            
         })
-     
+       
      }
 
     return (

@@ -7,6 +7,7 @@ import ServiceDetails from "../components/ServiceDetails/ServiceDetails";
 import PrivateRouter from "./PrivateRouter";
 import About from "../pages/About/About";
 import Booking from "../pages/Booking/Booking";
+import ErrorPage from "../components/ErrorPage/ErrorPage";
 
 
    
@@ -16,6 +17,7 @@ const router = createBrowserRouter([
     {
         path:'/',
         element:<Root></Root>,
+        errorElement:<ErrorPage></ErrorPage>,
         children:[
             {
                 path:'/',
